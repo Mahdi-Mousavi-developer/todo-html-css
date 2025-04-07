@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw for maktab</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="mt-5 mx-auto rounded bg-black text-danger haf-high w-75 ">
+
+    <h1 class="fix-center"> Todo list :</h1>
+    <ul class="fix-center" id="list-of-tasks">
+    </ul>
+    <div class=" mt-5 d-flex justify-content-center align-self-md-stretch ">
+        <label for="task-input"></label>
+        <input class="bg-black text-danger " type="text" id="task-input" value="   please enter your task">
+        <div class="bg-danger text-black p-2 rounded-pill   ms-3 " id="trash">
+            <span>clear</span>
+        </div>
+        <div class="bg-danger text-black p-2 rounded-pill  ms-3 " id="submit">
+            <span>add</span>
+        </div>
+    </div>
+
+</div>
+<script>
+    const taskTexted = document.getElementById("task-input")
+    const listOfTask = document.getElementById("list-of-tasks");
+    const submitButton = document.getElementById("submit")
+    const trashButton = document.getElementById("trash")
+
+    submitButton.addEventListener('click', function () {
+        let taskText = taskTexted.value
+        const liItem = document.createElement("li")
+        liItem.innerText = taskText
+        listOfTask.appendChild(liItem)
+    })
+    trashButton.addEventListener('click', function () {
+        listOfTask.innerHTML = ""
+    })
+</script>
+</body>
+</html>
